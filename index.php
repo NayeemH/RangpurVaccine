@@ -54,7 +54,8 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="first_name" placeholder="First Name" class="form-control" type="text">
+                            <input name="city_corporation" placeholder="City Corporation" class="form-control"
+                                type="text">
                         </div>
                     </div>
                 </div>
@@ -65,17 +66,41 @@
                     <div class="col-md-4 selectContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="department" class="form-control selectpicker">
-                                <option value="">Select your Department/Office</option>
-                                <option>Department of Engineering</option>
-                                <option>Department of Agriculture</option>
-                                <option>Accounting Office</option>
-                                <option>Tresurer's Office</option>
-                                <option>MPDC</option>
-                                <option>MCTC</option>
-                                <option>MCR</option>
-                                <option>Mayor's Office</option>
-                                <option>Tourism Office</option>
+                            <select name="ward_no" class="form-control selectpicker">
+                                <option value="">Select your Ward</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                                <option>32</option>
+                                <option>33</option>
                             </select>
                         </div>
                     </div>
@@ -88,7 +113,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="last_name" placeholder="Last Name" class="form-control" type="text">
+                            <input name="par_add" placeholder="Parmanent Address" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -100,7 +125,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="last_name" placeholder="Last Name" class="form-control" type="text">
+                            <input name="local_add" placeholder="Local Address" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -112,7 +137,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="last_name" placeholder="Last Name" class="form-control" type="date">
+                            <input name="dob" placeholder="Date of Birth" class="form-control" type="date">
                         </div>
                     </div>
                 </div>
@@ -140,7 +165,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="user_name" placeholder="Username" class="form-control" type="text">
+                            <input name="client_name" placeholder="Client Name" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -151,17 +176,26 @@
                     <div class="col-md-4 selectContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="department" class="form-control selectpicker">
-                                <option value="">Select your Department/Office</option>
-                                <option>Department of Engineering</option>
-                                <option>Department of Agriculture</option>
-                                <option>Accounting Office</option>
-                                <option>Tresurer's Office</option>
-                                <option>MPDC</option>
-                                <option>MCTC</option>
-                                <option>MCR</option>
-                                <option>Mayor's Office</option>
-                                <option>Tourism Office</option>
+                            <select name="profession" class="form-control selectpicker">
+                                <option value="">Select your Profession</option>
+                                <option>Doctor, Health Worker (Govt.)</option>
+                                <option>Doctor, Health Worker (Private)</option>
+                                <option>First Responder ( Firefighter, Police)</option>
+                                <option>Education (Teacher, Stuff)</option>
+                                <option>Freedom Fighter</option>
+                                <option>Journalist </option>
+                                <option>Elected Official</option>
+                                <option>City Corporation Officer</option>
+                                <option>City Corporation Employee</option>
+                                <option>Govt. Emergency Service Worker</option>
+                                <option>Banker</option>
+                                <option>National team player</option>
+                                <option>Skilled Agricultural, Forestry & Fishery Workers</option>
+                                <option>Plant and Machine Operators and Assemblers</option>
+                                <option>Elementary Occupations</option>
+                                <option>Service and Sales Workers</option>
+                                <option>Armed Forces Occupations</option>
+                                <option>Technicians and Associate Professionals</option>
                             </select>
                         </div>
                     </div>
@@ -174,7 +208,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="contact_no" placeholder="(639)" class="form-control" type="number">
+                            <input name="mobile_no" placeholder="017XXXXXXXX" class="form-control" type="number">
                         </div>
                     </div>
                 </div>
@@ -186,7 +220,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="contact_no" placeholder="(639)" class="form-control" type="number">
+                            <input name="nid" placeholder="XXXXXXXXXXX" class="form-control" type="number">
                         </div>
                     </div>
                 </div>
@@ -198,7 +232,8 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="contact_no" placeholder="(639)" class="form-control" type="number">
+                            <input name="birth_certificate" placeholder="XXXXXXXXXXX" class="form-control"
+                                type="number">
                         </div>
                     </div>
                 </div>
@@ -210,7 +245,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="contact_no" placeholder="(639)" class="form-control" type="number">
+                            <input name="emer_contact_no" placeholder="017XXXXXXXX" class="form-control" type="number">
                         </div>
                     </div>
                 </div>
@@ -237,7 +272,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="last_name" placeholder="Last Name" class="form-control" type="date">
+                            <input name="covid_test_date" placeholder="Date" class="form-control" type="date">
                         </div>
                     </div>
                 </div>
@@ -265,7 +300,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input name="last_name" placeholder="Last Name" class="form-control" type="text">
+                            <input name="immunity_times" placeholder="Number" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -273,21 +308,17 @@
 
                 <!-- Dropdown input -->
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Profession</label>
+                    <label class="col-md-4 control-label">Previous Health History</label>
                     <div class="col-md-4 selectContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                            <select name="department" class="form-control selectpicker">
-                                <option value="">Select your Department/Office</option>
-                                <option>Department of Engineering</option>
-                                <option>Department of Agriculture</option>
-                                <option>Accounting Office</option>
-                                <option>Tresurer's Office</option>
-                                <option>MPDC</option>
-                                <option>MCTC</option>
-                                <option>MCR</option>
-                                <option>Mayor's Office</option>
-                                <option>Tourism Office</option>
+                            <select name="health_history" class="form-control selectpicker">
+                                <option value="">Select your Health History</option>
+                                <option>Diabetic</option>
+                                <option>Blood Presure</option>
+                                <option>Cancer</option>
+                                <option>Fever</option>
+                                <option>Cough</option>
                             </select>
                         </div>
                     </div>
