@@ -388,21 +388,21 @@ if (isset($_POST['submit'])) {
         $emer_contact_no = $_POST['emer_contact_no'];
         $health_history = $_POST['health_history'];
         $covidTestBeforeYes = $_POST['covidTestBeforeYes'];
-        //$covid_test_date = $_POST['covid_test_date'] ?? 'NA';
+        $covid_test_date = $_POST['covid_test_date'] ?? 'NA';
         $immunityYes = $_POST['immunityYes'];
-        //$immunity_times = $_POST['immunity_times'] ?? 'NA';
+        $immunity_times = $_POST['immunity_times'] ?? 'NA';
 
-        if (empty($_POST['covid_test_date'])) {
-            $covid_test_date = NULL;
-        } else {
-            $covid_test_date = $_POST['covid_test_date'];
-        }
+        // if (empty($_POST['covid_test_date'])) {
+        //     $covid_test_date = NULL;
+        // } else {
+        //     $covid_test_date = $_POST['covid_test_date'];
+        // }
 
-        if (empty($_POST['immunity_times'])) {
-            $immunity_times = NULL;
-        } else {
-            $immunity_times = $_POST['immunity_times'];
-        }
+        // if (empty($_POST['immunity_times'])) {
+        //     $immunity_times = NULL;
+        // } else {
+        //     $immunity_times = $_POST['immunity_times'];
+        // }
 
 
 
