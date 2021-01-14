@@ -208,7 +208,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="mobile_no" placeholder="017XXXXXXXX" class="form-control" type="number">
+                            <input name="mobile_no" placeholder="017XXXXXXXX" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="nid" placeholder="XXXXXXXXXXX" class="form-control" type="number">
+                            <input name="nid" placeholder="XXXXXXXXXXX" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -232,8 +232,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="birth_certificate" placeholder="XXXXXXXXXXX" class="form-control"
-                                type="number">
+                            <input name="birth_certificate" placeholder="XXXXXXXXXXX" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -245,7 +244,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="emer_contact_no" placeholder="017XXXXXXXX" class="form-control" type="number">
+                            <input name="emer_contact_no" placeholder="017XXXXXXXX" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -259,8 +258,8 @@
                             <input type="checkbox" id="covidTestBeforeYes" name="covidTestBeforeYes" value="yes"
                                 onclick="showHideCovid()">
                             <label for="covidTestBeforeYes"> Yes</label><br>
-                            <input type="checkbox" id="covidTestBeforeNo" name="covidTestBeforeNo" value="no">
-                            <label for="covidTestBeforeNo"> No</label><br>
+                            <input type="checkbox" id="covidTestBeforeYes" name="covidTestBeforeYes" value="no">
+                            <label for="covidTestBeforeYes"> No</label><br>
                         </div>
                     </div>
                 </div>
@@ -287,8 +286,8 @@
                             <input type="checkbox" id="immunityYes" name="immunityYes" value="yes"
                                 onclick="showHideImmunity()">
                             <label for="immunityYes"> Yes</label><br>
-                            <input type="checkbox" id="immunityNo" name="immunityNo" value="no">
-                            <label for="immunityNo"> No</label><br>
+                            <input type="checkbox" id="immunityYes" name="immunityYes" value="no">
+                            <label for="immunityYes"> No</label><br>
                         </div>
                     </div>
                 </div>
@@ -339,6 +338,7 @@
                                 class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
                     </div>
                 </div>
+                <!-- <button type="submit" name="submit">SUBMIT</button> -->
 
             </fieldset>
         </form>
@@ -349,8 +349,102 @@
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'>
     </script>
-    <script src="./script.js"></script>
+    <!-- <script src="./script.js"></script> -->
 
 </body>
+
+
+
+<?php
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "rngvac";
+
+
+$conn = mysqli_connect($server, $username, $password, $dbname);
+
+
+if (isset($_POST['submit'])) {
+
+    // Get all values from the FORM
+
+    if (!empty($_POST['city_corporation']) && !empty($_POST['ward_no']) && !empty($_POST['par_add']) && !empty($_POST['local_add']) && !empty($_POST['dob']) && !empty($_POST['gender']) && !empty($_POST['client_name']) && !empty($_POST['profession']) && !empty($_POST['mobile_no']) && !empty($_POST['nid']) && !empty($_POST['birth_certificate']) && !empty($_POST['emer_contact_no']) && !empty($_POST['health_history'])) {
+
+
+        // Assign values into variables
+
+        $city_corporation = $_POST['city_corporation'];
+        $ward_no = $_POST['ward_no'];
+        $par_add = $_POST['par_add'];
+        $local_add = $_POST['local_add'];
+        $dob = $_POST['dob'];
+        $gender = $_POST['gender'];
+        $client_name = $_POST['client_name'];
+        $profession = $_POST['profession'];
+        $mobile_no = $_POST['mobile_no'];
+        $nid = $_POST['nid'];
+        $birth_certificate = $_POST['birth_certificate'];
+        $emer_contact_no = $_POST['emer_contact_no'];
+        $health_history = $_POST['health_history'];
+        $covidTestBeforeYes = $_POST['covidTestBeforeYes'];
+        //$covid_test_date = $_POST['covid_test_date'] ?? 'NA';
+        $immunityYes = $_POST['immunityYes'];
+        //$immunity_times = $_POST['immunity_times'] ?? 'NA';
+
+        if (empty($_POST['covid_test_date'])) {
+            $covid_test_date = NULL;
+        } else {
+            $covid_test_date = $_POST['covid_test_date'];
+        }
+
+        if (empty($_POST['immunity_times'])) {
+            $immunity_times = NULL;
+        } else {
+            $immunity_times = $_POST['immunity_times'];
+        }
+
+
+
+        // age calculation
+        function ageCalculator($dob)
+        {
+            if (!empty($dob)) {
+                $birthdate = new DateTime($dob);
+                $today   = new DateTime('today');
+                $age_cal = $birthdate->diff($today)->y;
+                return $age_cal;
+            } else {
+                return 0;
+            }
+        }
+        $age = ageCalculator($dob);
+        echo $age;
+
+        // query
+
+        $query = "INSERT INTO info(city_corporation,ward,parmanent_add,local_add,dob,age,gender,client_name,profession,mobile_num,nid,birth_certificate,emergency_contact,covid_test_before,covid_date,immunity_compromised,compromised_times,health_history) VALUES ('$city_corporation', '$ward_no', '$par_add', '$local_add', '$dob','$age', '$gender', '$client_name', '$profession', '$mobile_no', '$nid', '$birth_certificate', '$emer_contact_no', '$covidTestBeforeYes', '$covid_test_date', '$immunityYes', '$immunity_times', '$health_history')";
+
+
+        $run = mysqli_query($conn, $query);
+
+        //vul ache
+        //or die(mysqli_error($conn));
+
+        if ($run) {
+            echo "Form submitted Successfully";
+        } else {
+
+            // vul ache thik korte hobe
+            echo "Form submitted Successfully";
+        }
+    } else {
+        echo "all fields required";
+    }
+}
+
+?>
+
+
 
 </html>
