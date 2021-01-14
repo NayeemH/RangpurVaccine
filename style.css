@@ -1,1 +1,10 @@
 #success_message{ display: none;}
+
+
+#covidTestDate{
+    display: none;
+}
+
+#immunityTimes{
+    display: none;
+}
